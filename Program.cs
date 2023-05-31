@@ -98,6 +98,9 @@ public class Program
         }
         int bankDifficulty = 100;
         int totalSkillLevel = 0;
+        int luckValue = new Random().Next(-10, 10);
+
+        int randomBankDifficulty = luckValue + bankDifficulty;
 
         foreach (var member in Team)
         {
@@ -106,9 +109,9 @@ public class Program
 
         Console.WriteLine("-----Heist Report-----");
         Console.WriteLine($"Total Team Skill Level: {totalSkillLevel}");
-        Console.WriteLine($"Bank Difficulty Level: {bankDifficulty}");
+        Console.WriteLine($"Bank Difficulty Level: {randomBankDifficulty}");
 
-        if (totalSkillLevel >= bankDifficulty)
+        if (totalSkillLevel >= randomBankDifficulty)
         {
             Console.WriteLine("The Heist was a Success!");
         }
